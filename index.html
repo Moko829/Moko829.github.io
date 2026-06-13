@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Molly | EHS & Compliance Professional</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-dark:   #085041;
+      --green-mid:    #0F6E56;
+      --green-light:  #1D9E75;
+      --green-tint:   #E1F5EE;
+      --amber:        #C8922A;
+      --text-primary: #1A1A18;
+      --text-secondary: #4A4A46;
+      --text-muted:   #88887F;
+      --bg:           #F7F5F0;
+      --surface:      #FFFFFF;
+      --border:       #E0DDD5;
+      --border-light: #ECEAE4;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background: var(--bg);
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 245, 240, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-light);
+      padding: 0 2rem;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0.85rem 0;
+    }
+
+    nav a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    nav a:hover { color: var(--green-mid); }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    section:last-of-type { border-bottom: none; }
+
+    /* ── HERO ── */
+    #hero {
+      padding: 4rem 0 3.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: 0.6rem;
+    }
+
+    h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(56px, 10vw, 80px);
+      font-weight: 700;
+      line-height: 0.95;
+      letter-spacing: -1px;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      letter-spacing: 0.3px;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-bio {
+      font-size: 15px;
+      color: var(--text-secondary);
+      max-width: 540px;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 99px;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      background: var(--surface);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .tag.featured {
+      background: var(--green-tint);
+      color: var(--green-dark);
+      border-color: #9FE1CB;
+    }
+
+    /* ── SECTION LABELS ── */
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    /* ── TIMELINE ── */
+    .timeline {
+      position: relative;
+      padding-left: 24px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--green-mid), transparent);
+    }
+
+    .tl-entry {
+      position: relative;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .tl-entry:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .tl-entry::before {
+      content: '';
+      position: absolute;
+      left: -28px;
+      top: 7px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--green-mid);
+      border: 2px solid var(--bg);
+      outline: 1px solid var(--green-mid);
+    }
+
+    .tl-date {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: 3px;
+    }
+
+    .tl-title {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .tl-org {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .tl-body {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .tl-bullets {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      padding-left: 1.1rem;
+      margin-top: 6px;
+    }
+
+    .tl-bullets li { margin-bottom: 3px; }
+
+    /* ── CERT CARDS ── */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 10px;
+    }
+
+    .cert-card {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+
+    .cert-card.pending {
+      border-style: dashed;
+      opacity: 0.7;
+    }
+
+    .cert-card .cert-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 3px;
+    }
+
+    .cert-card .cert-detail {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .cert-card .cert-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: var(--green-tint);
+      color: var(--green-dark);
+      padding: 2px 8px;
+      border-radius: 99px;
+      margin-bottom: 6px;
+    }
+
+    .cert-card .pending-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: #FAF0DC;
+      color: #633806;
+      padding: 2px 8px;
+      border-radius: 99px;
+      margin-bottom: 6px;
+    }
+
+    /* ── SCCA BLOCKS ── */
+    .scca-block {
+      background: var(--surface);
+      border-left: 3px solid var(--green-mid);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 18px;
+      margin-bottom: 10px;
+      border-top: 1px solid var(--border-light);
+      border-right: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .scca-block .scca-role {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 5px;
+    }
+
+    .scca-block .scca-body {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* ── SKILLS ── */
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0;
+    }
+
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .skill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green-light);
+      flex-shrink: 0;
+    }
+
+    /* ── CONTACT ── */
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 1rem;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: var(--surface);
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .contact-link:hover {
+      border-color: var(--green-mid);
+      color: var(--green-dark);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-style: italic;
+      border-top: 1px solid var(--border-light);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .container { padding: 0 1.25rem; }
+      nav ul { gap: 1.25rem; }
+      .cert-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#volunteer">Volunteer</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="container">
+        <p class="hero-eyebrow">EHS &amp; Compliance Portfolio</p>
+        <h1>Molly</h1>
+        <p class="hero-subtitle">Environmental Health &amp; Safety &nbsp;&middot;&nbsp; Clayton, NC</p>
+        <p class="hero-bio">
+          EHS and compliance professional with hands-on experience in DOT coordination, industrial safety, and emergency response. Currently completing a B.S. in Environmental Health &amp; Safety at UMGC (expected Spring 2027), with active field experience through SCCA volunteer work in safety inspection and grid operations.
+        </p>
+        <div class="tag-row">
+          <span class="tag featured">OSHA-30 Certified</span>
+          <span class="tag featured">DOT Compliance</span>
+          <span class="tag featured">Hazmat Response</span>
+          <span class="tag">UMGC B.S. Candidate</span>
+          <span class="tag">SCCA Volunteer</span>
+          <span class="tag">Safety Inspections</span>
+          <span class="tag">Technical Writing</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="container">
+        <p class="section-label">Education</p>
+        <div class="timeline">
+          <div class="tl-entry">
+            <p class="tl-date">2023 &mdash; Expected Spring 2027</p>
+            <p class="tl-title">B.S. in Environmental Health &amp; Safety</p>
+            <p class="tl-org">University of Maryland Global Campus (UMGC)</p>
+            <p class="tl-body">Coursework integrates environmental systems, chemistry, regulatory compliance, and technical communication. Selected coursework includes:</p>
+            <ul class="tl-bullets">
+              <li>ENHS 300 &mdash; Environmental Systems: life cycle analysis, pollutant assessment across lithosphere, hydrosphere, atmosphere, and biosphere</li>
+              <li>Environmental Chemistry &mdash; chemical behavior, TCE, pH, international environmental protocols</li>
+              <li>WRTG 393 &mdash; Advanced Technical Writing: professional reports, presentations, and job application materials targeting EHS roles</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="container">
+        <p class="section-label">Work Experience</p>
+        <div class="timeline">
+          <div class="tl-entry">
+            <p class="tl-date">2023 &mdash; May 2026</p>
+            <p class="tl-title">DOT Job Coordinator &amp; Safety Assistant</p>
+            <p class="tl-org">Nucor Corporation</p>
+            <ul class="tl-bullets">
+              <li>Managed DOT compliance documentation and job coordination in a large-scale industrial manufacturing environment</li>
+              <li>Supported safety program administration including hazard identification and recordkeeping</li>
+              <li>Contributed to Women in Manufacturing (WiM) NC subcommittee, co-organizing professional development events</li>
+            </ul>
+          </div>
+          <!-- Add future roles above this comment -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+      <div class="container">
+        <p class="section-label">Certifications &amp; Training</p>
+        <div class="cert-grid">
+          <div class="cert-card">
+            <span class="cert-badge">Active</span>
+            <p class="cert-name">OSHA-30</p>
+            <p class="cert-detail">General Industry</p>
+          </div>
+          <div class="cert-card">
+            <span class="cert-badge">Active</span>
+            <p class="cert-name">DOT Compliance</p>
+            <p class="cert-detail">Hazardous Materials Transportation</p>
+          </div>
+          <div class="cert-card pending">
+            <span class="pending-badge">In Progress</span>
+            <p class="cert-name">Google Data Analytics</p>
+            <p class="cert-detail">Certificate Program</p>
+          </div>
+          <div class="cert-card pending">
+            <span class="pending-badge">Goal</span>
+            <p class="cert-name">CSP</p>
+            <p class="cert-detail">Certified Safety Professional &mdash; post-graduation</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VOLUNTEER -->
+    <section id="volunteer">
+      <div class="container">
+        <p class="section-label">Volunteer &amp; Field Experience</p>
+        <p style="font-size:14px; color:#4A4A46; margin-bottom:1.25rem; max-width:560px;">
+          Sports Car Club of America (SCCA) volunteer work provides direct application of EHS principles in a high-stakes, time-compressed environment. Roles include both operations and technical safety responsibilities.
+        </p>
+        <div class="scca-block">
+          <p class="scca-role">Timing &amp; Scoring</p>
+          <p class="scca-body">Manual lap tracking, grid sheet printing, and transponder troubleshooting during live race events. High-pressure tower environment requiring accuracy and composure under time constraints.</p>
+        </div>
+        <div class="scca-block">
+          <p class="scca-role">Grid Operations</p>
+          <p class="scca-body">Pre-race vehicle safety inspections, spill and hazmat response, driver direction, black flag protocol enforcement, and coordination of 20&ndash;50 vehicles with a small team. Direct application of emergency response procedures and safety compliance standards.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
+        <p class="section-label">Skills &amp; Competencies</p>
+        <div class="skill-grid">
+          <div class="skill-item"><span class="skill-dot"></span>Regulatory Compliance</div>
+          <div class="skill-item"><span class="skill-dot"></span>Hazard Assessment</div>
+          <div class="skill-item"><span class="skill-dot"></span>DOT Coordination</div>
+          <div class="skill-item"><span class="skill-dot"></span>Technical Writing</div>
+          <div class="skill-item"><span class="skill-dot"></span>Emergency Response</div>
+          <div class="skill-item"><span class="skill-dot"></span>Environmental Chemistry</div>
+          <div class="skill-item"><span class="skill-dot"></span>Life Cycle Analysis</div>
+          <div class="skill-item"><span class="skill-dot"></span>Safety Inspections</div>
+          <div class="skill-item"><span class="skill-dot"></span>Data Analysis</div>
+          <div class="skill-item"><span class="skill-dot"></span>Team Coordination</div>
+          <div class="skill-item"><span class="skill-dot"></span>Hazmat Response</div>
+          <div class="skill-item"><span class="skill-dot"></span>OSHA Standards</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <p class="section-label">Contact</p>
+        <p style="font-size:15px; color:#4A4A46; max-width:480px;">
+          Open to EHS, compliance, and environmental health roles in the Raleigh-Durham area and beyond. Feel free to reach out.
+        </p>
+        <div class="contact-row">
+          <a href="https://www.linkedin.com/in/your-linkedin-handle" class="contact-link" target="_blank">
+            LinkedIn &rarr;
+          </a>
+          <a href="mailto:your@email.com" class="contact-link">
+            Email &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>This portfolio is a living document and will grow with new coursework, certifications, and experience.</p>
+  </footer>
+
+</body>
+</html>
