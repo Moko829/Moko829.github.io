@@ -4,6 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Molly | EHS & Compliance Professional</title>
+  <meta name="description" content="Molly Owens is an EHS and compliance professional in Clayton, NC. OSHA-30, DOT hazmat, SCCA safety volunteer, and UMGC B.S. candidate (Spring 2027), with selected coursework case studies." />
+  <meta name="theme-color" content="#085041" />
+
+  <!-- Link preview (LinkedIn, text messages, email). Upload og-image.png to the same repo as index.html. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Molly | EHS & Compliance Professional" />
+  <meta property="og:description" content="OSHA-30, DOT hazmat, SCCA safety volunteer, and UMGC B.S. candidate in Environmental Health & Safety. See selected case studies from my coursework." />
+  <meta property="og:url" content="https://moko829.github.io/" />
+  <meta property="og:image" content="https://moko829.github.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23085041'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='38' font-weight='700' text-anchor='middle' fill='%23E1F5EE'%3EM%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
@@ -18,7 +30,7 @@
       --amber:        #C8922A;
       --text-primary: #1A1A18;
       --text-secondary: #4A4A46;
-      --text-muted:   #88887F;
+      --text-muted:   #6B6B63;
       --bg:           #F7F5F0;
       --surface:      #FFFFFF;
       --border:       #E0DDD5;
@@ -27,6 +39,10 @@
 
     html { scroll-behavior: smooth; }
 
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+
     body {
       font-family: 'Inter', system-ui, sans-serif;
       font-size: 16px;
@@ -34,6 +50,24 @@
       color: var(--text-primary);
       background: var(--bg);
     }
+
+    a:focus-visible {
+      outline: 2px solid var(--green-mid);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: var(--green-dark);
+      color: #fff;
+      padding: 8px 14px;
+      z-index: 200;
+      font-size: 14px;
+    }
+    .skip-link:focus { left: 8px; top: 8px; }
 
     /* ── NAV ── */
     nav {
@@ -48,7 +82,8 @@
 
     nav ul {
       display: flex;
-      gap: 2rem;
+      flex-wrap: wrap;
+      gap: 0.25rem 1.4rem;
       list-style: none;
       max-width: 760px;
       margin: 0 auto;
@@ -78,6 +113,7 @@
     section {
       padding: 3.5rem 0;
       border-bottom: 1px solid var(--border-light);
+      scroll-margin-top: 3.25rem;
     }
 
     section:last-of-type { border-bottom: none; }
@@ -122,8 +158,44 @@
       color: var(--text-secondary);
       max-width: 540px;
       line-height: 1.7;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
+
+    .looking {
+      background: var(--green-tint);
+      border: 1px solid #9FE1CB;
+      border-radius: 10px;
+      padding: 12px 18px 14px;
+      max-width: 540px;
+      margin-bottom: 1.4rem;
+    }
+
+    .looking-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green-dark);
+      margin-bottom: 2px;
+    }
+
+    .looking p:last-child {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--green-dark);
+    }
+
+    .hero-link {
+      display: inline-block;
+      margin-top: 1.4rem;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--green-mid);
+      text-decoration: none;
+    }
+
+    .hero-link:hover { text-decoration: underline; }
 
     .tag-row {
       display: flex;
@@ -242,6 +314,60 @@
 
     .tl-bullets li { margin-bottom: 3px; }
 
+    /* ── SELECTED WORK ── */
+    .work-intro {
+      font-size: 14px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin-bottom: 1.5rem;
+    }
+
+    .case {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 20px 22px 22px;
+      margin-bottom: 14px;
+    }
+
+    .case-kicker {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: 4px;
+    }
+
+    .case h3 {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.35;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .case-row { margin-bottom: 0.9rem; }
+
+    .case-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1px;
+    }
+
+    .case-row p:last-child {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .case .tag-row { margin-top: 1.1rem; }
+
     /* ── CERT CARDS ── */
     .cert-grid {
       display: grid;
@@ -258,7 +384,6 @@
 
     .cert-card.pending {
       border-style: dashed;
-      opacity: 0.7;
     }
 
     .cert-card .cert-name {
@@ -389,16 +514,32 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       .container { padding: 0 1.25rem; }
-      nav ul { gap: 1.25rem; }
+      nav { padding: 0 1.25rem; }
+      nav ul {
+        flex-wrap: nowrap;
+        gap: 1.1rem;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+        padding: 0.7rem 1.5rem 0.7rem 0;
+        -webkit-mask-image: linear-gradient(to right, #000 88%, transparent);
+        mask-image: linear-gradient(to right, #000 88%, transparent);
+      }
+      nav ul::-webkit-scrollbar { display: none; }
+      section { scroll-margin-top: 3rem; }
       .cert-grid { grid-template-columns: 1fr 1fr; }
+      .case { padding: 18px 16px 20px; }
     }
   </style>
 </head>
 <body>
 
-  <nav>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav aria-label="Main">
     <ul>
       <li><a href="#education">Education</a></li>
+      <li><a href="#work">Selected Work</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#volunteer">Volunteer</a></li>
@@ -407,7 +548,7 @@
     </ul>
   </nav>
 
-  <main>
+  <main id="main">
 
     <!-- HERO -->
     <section id="hero">
@@ -418,51 +559,219 @@
         <p class="hero-bio">
           EHS and compliance professional with hands-on experience in DOT coordination, industrial safety, and emergency response. Currently completing a B.S. in Environmental Health &amp; Safety at UMGC (expected Spring 2027), with active field experience through SCCA volunteer work in safety inspection and grid operations.
         </p>
+        <div class="looking">
+          <p class="looking-label">What I'm looking for</p>
+          <p>EHS, safety, and compliance roles in manufacturing and industrial settings. I'm based in Clayton, NC, open to the Raleigh-Durham area and beyond, and finishing my degree in Spring 2027.</p>
+        </div>
         <div class="tag-row">
           <span class="tag featured">OSHA-30 Certified</span>
           <span class="tag featured">DOT Compliance</span>
           <span class="tag featured">Hazmat Response</span>
+          <span class="tag featured">AutoCAD</span>
+          <span class="tag featured">Dean's List, Spring &amp; Summer 2026</span>
           <span class="tag">UMGC B.S. Candidate</span>
           <span class="tag">SCCA Volunteer</span>
           <span class="tag">Safety Inspections</span>
           <span class="tag">Technical Writing</span>
         </div>
+        <a class="hero-link" href="#work">See my selected work &rarr;</a>
       </div>
     </section>
 
     <!-- EDUCATION -->
     <section id="education">
       <div class="container">
-        <p class="section-label">Education</p>
+        <h2 class="section-label">Education</h2>
         <div class="timeline">
           <div class="tl-entry">
-            <p class="tl-date">2023 &mdash; Expected Spring 2027</p>
+            <p class="tl-date">2023 to Spring 2027 (expected)</p>
             <p class="tl-title">B.S. in Environmental Health &amp; Safety</p>
             <p class="tl-org">University of Maryland Global Campus (UMGC)</p>
-            <p class="tl-body">Coursework integrates environmental systems, chemistry, regulatory compliance, and technical communication. Selected coursework includes:</p>
+            <p class="tl-body">Dean's List, Spring 2026 and Summer 2026. Coursework integrates environmental systems, chemistry, regulatory compliance, and technical communication. Selected coursework includes:</p>
             <ul class="tl-bullets">
-              <li>ENHS 300 &mdash; Environmental Systems: life cycle analysis, pollutant assessment across lithosphere, hydrosphere, atmosphere, and biosphere</li>
-              <li>Environmental Chemistry &mdash; chemical behavior, TCE, pH, international environmental protocols</li>
-              <li>WRTG 393 &mdash; Advanced Technical Writing: professional reports, presentations, and job application materials targeting EHS roles</li>
+              <li>ENHS 300, Environmental Systems: life cycle analysis, pollutant assessment across lithosphere, hydrosphere, atmosphere, and biosphere</li>
+              <li>Environmental Chemistry: chemical behavior, TCE, pH, international environmental protocols</li>
+              <li>ENHS 310, Hazardous Substances and Toxicology: workplace toxicology, exposure science, and contaminants such as PCBs, Chromium VI, and MTBE</li>
+              <li>ENHS 320, Incident Response and Investigation: root cause analysis, incident command, and emergency planning</li>
+              <li>ENHS 340, Environmental Technology and Control: sampling and analysis, release reporting, and remediation</li>
+              <li>WRTG 393, Advanced Technical Writing: professional reports, presentations, and job application materials targeting EHS roles</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- SELECTED WORK -->
+    <section id="work">
+      <div class="container">
+        <h2 class="section-label">Selected Work</h2>
+        <p class="work-intro">
+          These six projects come from my UMGC coursework. They use hypothetical scenarios or public records, such as EPA site files and federal investigation reports, so no real client or employer information is involved. The methods and regulations in them are real.
+        </p>
+
+        <article class="case">
+          <p class="case-kicker">Chem 297 &middot; Environmental Chemistry</p>
+          <h3>Superfund Site Profile: NC State University Lot 86, Farm Unit #1</h3>
+          <div class="case-row">
+            <p class="case-label">The scenario</p>
+            <p>A real 1.5-acre Superfund site on the NC State campus in Raleigh, where science lab and agricultural research waste was buried in trenches between 1969 and 1980. The EPA added it to the National Priorities List in 1986.</p>
+          </div>
+          <div class="case-row">
+            <p class="case-label">What I did</p>
+            <p>Used EPA site profiles and Five-Year Review records to trace the site from start to finish: what was dumped (solvents, pesticides, heavy metals, acids, PCBs, PAHs, and low-level radioactive material), which media were contaminated (soil and groundwater), and how the cleanup worked. The EPA's 1996 plan treated and capped the soil, which was finished in 1999, and extracted and treated the groundwater, with that system completed in 2006. Land use and groundwater restrictions and a fence remain in place.</p>
+          </div>
+          <div class="case-row">
+            <p class="case-label">What I took from it</p>
+            <p>The chemistry explains the site's behavior. Volatile organic compounds like TCE do not bind well to soil, so they travel far in groundwater, while PCBs and PAHs break down slowly and can linger for decades. I also looked at what could have happened without a cleanup, including TCE exposure through drinking water or vapor in buildings, with more than 200,000 people living within five miles. The 2023 review found the site now meets all four Superfund performance measures.</p>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Environmental chemistry</span>
+            <span class="tag">Contaminant fate and transport</span>
+            <span class="tag">Remediation review</span>
+            <span class="tag">EPA record research</span>
+          </div>
+        </article>
+
+        <article class="case">
+          <p class="case-kicker">ENHS 340 &middot; Environmental Technology and Control</p>
+          <h3>Sampling and Analysis Plan for Hexavalent Chromium</h3>
+          <div class="case-row">
+            <p class="case-label">The scenario</p>
+            <p>A hypothetical chrome plating facility needed a field plan for finding hexavalent chromium (Cr (VI)) in groundwater, workplace air, and surface soil.</p>
+          </div>
+          <div class="case-row">
+            <p class="case-label">What I did</p>
+            <p>Wrote a step-by-step sampling procedure for each medium: low-flow groundwater sampling with field filtering and a pH 9 to 9.5 buffer (EPA Method 218.6), breathing-zone air sampling on a 37 mm filter (NIOSH Method 7600), and surface soil sampling with alkaline digestion at the lab (EPA SW-846 Method 3060A). I also set up sample ID formats and chain-of-custody tables so field staff have what they need to hand samples to an accredited lab.</p>
+          </div>
+          <div class="case-row">
+            <p class="case-label">What I took from it</p>
+            <p>Cr (VI) is chemically unstable, so timing and preservation matter. Regulation is also uneven across media. OSHA sets a workplace air limit of 5 &micro;g/m&sup3; as an 8-hour average, but I found no enforceable federal or North Carolina soil standard, and the lab service list I used had no Cr (VI) air analysis, so I built that part from NIOSH and OSHA sources.</p>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Environmental sampling</span>
+            <span class="tag">Chain of custody</span>
+            <span class="tag">Regulatory research</span>
+            <span class="tag">Technical writing</span>
+          </div>
+        </article>
+
+        <article class="case">
+          <p class="case-kicker">ENHS 340 &middot; Environmental Technology and Control</p>
+          <h3>Chromium Release Report and Cleanup Field Notes</h3>
+          <div class="case-row">
+            <p class="case-label">The scenario</p>
+            <p>In a follow-up scenario at the same hypothetical plating facility, a forklift punctured drums of chromic acid, and about 6,000 pounds of Cr (VI) reached the soil over roughly 24 hours before anyone noticed.</p>
+          </div>
+          <div class="case-row">
+            <p class="case-label">What I did</p>
+            <p>Wrote the release report: the quantity was above the 5,000 pound CERCLA reportable quantity, so it called for National Response Center, LEPC, and state notification. I also assigned the RCRA waste code D007 through TCLP testing, listed first responder precautions from the Emergency Response Guidebook, and laid out field and lab detection methods. Then I wrote cleanup field notes for a technician: dig out the worst surface soil, treat it with ferrous sulfate to turn Cr (VI) into the less toxic Cr (III), and treat deeper soil in place with in situ chemical reduction.</p>
+          </div>
+          <div class="case-row">
+            <p class="case-label">What I took from it</p>
+            <p>A cleanup plan only works if the people around it understand it. I added plain-language talking points and sample questions from an owner and a neighbor, including why hauling everything away would only move the chromium somewhere else. Tying the treatment choices to the waste management hierarchy kept the reasoning clear.</p>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Release reporting</span>
+            <span class="tag">RCRA &amp; CERCLA</span>
+            <span class="tag">Remediation planning</span>
+            <span class="tag">Risk communication</span>
+          </div>
+        </article>
+
+        <article class="case">
+          <p class="case-kicker">ENHS 320 &middot; Incident Response and Investigation</p>
+          <h3>Propane Incident Investigations</h3>
+          <div class="case-row">
+            <p class="case-label">The scenario</p>
+            <p>Two real incidents, both involving propane: a fatal flash fire in a Nebraska hog farrowing shed (Nebraska FACE Investigation 02NE004) and the 2007 Little General Store explosion in Ghent, West Virginia (CSB Report 2007-04-I-WV).</p>
+          </div>
+          <div class="case-row">
+            <p class="case-label">What I did</p>
+            <p>For the farm fire, I completed an incident investigation form covering the sequence of events and sorted the causes into superficial and underlying. A cracked shut-off valve was the surface cause. Taking the cracked valve off and reconnecting the pipe with no shut-off, and running a ventilation fan on low, were the deeper ones. For the Ghent explosion, I ran five analyses on the same incident: a timeline, a root cause analysis, a what-if analysis, Five Whys, and a cause-and-effect tree. Then I ranked my recommendations.</p>
+          </div>
+          <div class="case-row">
+            <p class="case-label">What I took from it</p>
+            <p>The Five Whys and the root cause analysis kept landing on the same roots, mostly gaps in training and supervision, which showed me how the methods back each other up. My top recommendation was formal certification and enforced supervision for propane technicians, followed by tighter tank installation audits and annual propane-specific training for responders. The what-if analysis was the most useful to me, since it asks which safeguards should have caught the problem earlier.</p>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Incident investigation</span>
+            <span class="tag">Root cause analysis</span>
+            <span class="tag">What-if &amp; Five Whys</span>
+            <span class="tag">Corrective actions</span>
+          </div>
+        </article>
+
+        <article class="case">
+          <p class="case-kicker">ENHS 320 &middot; Incident Response and Investigation</p>
+          <h3>Emergency Action and Business Continuity Plan</h3>
+          <div class="case-row">
+            <p class="case-label">The scenario</p>
+            <p>Using lessons from the Ghent explosion, I built a plan framework for a fictional small-town convenience store with a propane tank and cylinder exchange.</p>
+          </div>
+          <div class="case-row">
+            <p class="case-label">What I did</p>
+            <p>Chose an Emergency Action Plan under OSHA 29 CFR 1910.38, since store employees are not trained to stop a propane leak or fight a propane fire. The core rule is evacuate first: employees report, call 911, get everyone out, and account for people. The plan scales through three response levels, from a minor outside leak to a fire or explosion, and ties each part to the OSHA, EPA, and NFPA requirements that apply. I also added business continuity steps, since a small-town store may be the only nearby source of fuel, groceries, and propane.</p>
+          </div>
+          <div class="case-row">
+            <p class="case-label">What I took from it</p>
+            <p>The Ghent investigation turned into planning rules. Vapor built up for about 28 minutes with nobody evacuating, so the plan treats any propane release as an evacuation. Writing it showed me how an investigation's findings become procedures people can actually follow.</p>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Emergency planning</span>
+            <span class="tag">OSHA, EPA &amp; NFPA compliance</span>
+            <span class="tag">Hazard &amp; risk ranking</span>
+            <span class="tag">Business continuity</span>
+          </div>
+        </article>
+
+        <article class="case">
+          <p class="case-kicker">WRTG 393 &middot; Advanced Technical Writing</p>
+          <h3>Cybersecurity Risk Report for a Small Hotel</h3>
+          <div class="case-row">
+            <p class="case-label">The scenario</p>
+            <p>A fictional small hotel with an open WiFi network, no firewall or antivirus, secondhand 2013 security cameras still on their factory-default logins, and no technology policy or staff training.</p>
+          </div>
+          <div class="case-row">
+            <p class="case-label">What I did</p>
+            <p>Wrote a report to the hotel owner from the point of view of a front desk employee. It opens with an executive summary, explains three problems, and pairs each one with a low-cost fix: password-protect the WiFi, split guest and business networks, and add a firewall, antivirus, and automatic updates. Change the camera logins right away and plan to replace the cameras. Create a one-page technology policy and give a short annual training. I used tables and a figure to compare what the hotel does now with what it should do.</p>
+          </div>
+          <div class="case-row">
+            <p class="case-label">What I took from it</p>
+            <p>The reader was a business owner, not an IT person, so every risk got an everyday comparison and every problem got a fix that is cheap and quick. Several of the steps can be done in a single afternoon. It showed me how to turn a technical risk into a decision someone can act on.</p>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Technical writing</span>
+            <span class="tag">Risk communication</span>
+            <span class="tag">Cybersecurity basics</span>
+            <span class="tag">Policy drafting</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <!-- EXPERIENCE -->
     <section id="experience">
       <div class="container">
-        <p class="section-label">Work Experience</p>
+        <h2 class="section-label">Work Experience</h2>
         <div class="timeline">
           <div class="tl-entry">
-            <p class="tl-date">2022 &mdash; May 2026</p>
+            <p class="tl-date">December 2021 to May 2026</p>
             <p class="tl-title">DOT Job Coordinator &amp; Safety Assistant</p>
             <p class="tl-org">Nucor Corporation</p>
             <ul class="tl-bullets">
               <li>Managed DOT compliance documentation and job coordination in a large-scale industrial manufacturing environment</li>
               <li>Supported safety program administration including hazard identification and recordkeeping</li>
+              <li>Worked on safety audits, PPE inspections, training, and corrective action tracking</li>
+              <li>Used AutoCAD daily for rebar detailing</li>
               <li>Contributed to Women in Manufacturing (WiM) NC subcommittee, co-organizing professional development events</li>
+            </ul>
+          </div>
+          <div class="tl-entry">
+            <p class="tl-date">October 2020 to November 2021</p>
+            <p class="tl-title">Quality Assurance Specialist</p>
+            <p class="tl-org">Aisin (formerly AW North Carolina), Durham, NC</p>
+            <ul class="tl-bullets">
+              <li>Performed quality inspections and tracked corrective actions on transmissions</li>
             </ul>
           </div>
           <!-- Add future roles above this comment -->
@@ -473,7 +782,7 @@
     <!-- CERTIFICATIONS -->
     <section id="certifications">
       <div class="container">
-        <p class="section-label">Certifications &amp; Training</p>
+        <h2 class="section-label">Certifications &amp; Training</h2>
         <div class="cert-grid">
           <div class="cert-card">
             <span class="cert-badge">Active</span>
@@ -485,15 +794,25 @@
             <p class="cert-name">DOT Compliance</p>
             <p class="cert-detail">Hazardous Materials Transportation</p>
           </div>
+          <div class="cert-card">
+            <span class="cert-badge">Active</span>
+            <p class="cert-name">First Aid / CPR / AED</p>
+            <p class="cert-detail">Heartsaver, issued June 2025</p>
+          </div>
+          <div class="cert-card">
+            <span class="cert-badge">Active</span>
+            <p class="cert-name">MTA: Security Fundamentals</p>
+            <p class="cert-detail">Microsoft Technology Associate, earned 2021</p>
+          </div>
           <div class="cert-card pending">
             <span class="pending-badge">In Progress</span>
             <p class="cert-name">Google Data Analytics</p>
-            <p class="cert-detail">Certificate Program</p>
+            <p class="cert-detail">Building skills to track incident rates and safety trends</p>
           </div>
           <div class="cert-card pending">
             <span class="pending-badge">Goal</span>
             <p class="cert-name">CSP</p>
-            <p class="cert-detail">Certified Safety Professional &mdash; post-graduation</p>
+            <p class="cert-detail">Certified Safety Professional, after graduation</p>
           </div>
         </div>
       </div>
@@ -502,7 +821,7 @@
     <!-- VOLUNTEER -->
     <section id="volunteer">
       <div class="container">
-        <p class="section-label">Volunteer &amp; Field Experience</p>
+        <h2 class="section-label">Volunteer &amp; Field Experience</h2>
         <p style="font-size:14px; color:#4A4A46; margin-bottom:1.25rem; max-width:560px;">
           Sports Car Club of America (SCCA) volunteer work provides direct application of EHS principles in a high-stakes, time-compressed environment. Roles include both operations and technical safety responsibilities.
         </p>
@@ -520,16 +839,19 @@
     <!-- SKILLS -->
     <section id="skills">
       <div class="container">
-        <p class="section-label">Skills &amp; Competencies</p>
+        <h2 class="section-label">Skills &amp; Competencies</h2>
         <div class="skill-grid">
           <div class="skill-item"><span class="skill-dot"></span>Regulatory Compliance</div>
           <div class="skill-item"><span class="skill-dot"></span>Hazard Assessment</div>
           <div class="skill-item"><span class="skill-dot"></span>DOT Coordination</div>
           <div class="skill-item"><span class="skill-dot"></span>Technical Writing</div>
           <div class="skill-item"><span class="skill-dot"></span>Emergency Response</div>
+          <div class="skill-item"><span class="skill-dot"></span>Incident Investigation</div>
+          <div class="skill-item"><span class="skill-dot"></span>Environmental Sampling Plans</div>
           <div class="skill-item"><span class="skill-dot"></span>Environmental Chemistry</div>
           <div class="skill-item"><span class="skill-dot"></span>Life Cycle Analysis</div>
           <div class="skill-item"><span class="skill-dot"></span>Safety Inspections</div>
+          <div class="skill-item"><span class="skill-dot"></span>AutoCAD</div>
           <div class="skill-item"><span class="skill-dot"></span>Data Analysis</div>
           <div class="skill-item"><span class="skill-dot"></span>Team Coordination</div>
           <div class="skill-item"><span class="skill-dot"></span>Hazmat Response</div>
@@ -541,17 +863,22 @@
     <!-- CONTACT -->
     <section id="contact">
       <div class="container">
-        <p class="section-label">Contact</p>
+        <h2 class="section-label">Contact</h2>
         <p style="font-size:15px; color:#4A4A46; max-width:480px;">
           Open to EHS, compliance, and environmental health roles in the Raleigh-Durham area and beyond. Feel free to reach out.
         </p>
         <div class="contact-row">
-          <a href="https://www.linkedin.com/in/mollybowens" class="contact-link" target="_blank">
+          <a href="https://www.linkedin.com/in/mollybowens" class="contact-link" target="_blank" rel="noopener noreferrer">
             LinkedIn &rarr;
           </a>
           <a href="mailto:ncsumbo@gmail.com" class="contact-link">
             Email &rarr;
           </a>
+          <!-- RESUME BUTTON: upload your EHS & Compliance resume PDF to the repo as Molly-Owens-Resume.pdf, then delete the comment markers on the next three lines.
+          <a href="Molly-Owens-Resume.pdf" class="contact-link" target="_blank" rel="noopener noreferrer">
+            Resume (PDF) &darr;
+          </a>
+          -->
         </div>
       </div>
     </section>
@@ -559,7 +886,7 @@
   </main>
 
   <footer>
-    <p>This portfolio is a living document and will grow with new coursework, certifications, and experience.</p>
+    <p>This portfolio is a living document and will grow with new coursework, certifications, and experience. Last updated October 2026.</p>
   </footer>
 
 </body>
